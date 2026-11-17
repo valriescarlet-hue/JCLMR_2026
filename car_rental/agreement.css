@@ -1,0 +1,212 @@
+     :root {
+            --bg-base: #060913;
+            --bg-surface: #0f172a;
+            --bg-surface-hover: #16223b;
+            --border-subtle: #1e293b;
+            --border-highlight: #3b82f6;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dimmed: #64748b;
+            --success: #10b981;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .agreement-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .agreement-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1.5rem;
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-title span {
+            color: var(--primary);
+        }
+
+        .agreement-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Metadata Grid */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .meta-item span {
+            display: block;
+            color: var(--text-dimmed);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item strong {
+            color: var(--text-main);
+        }
+
+        /* Terms & Conditions Scroll Box */
+        .terms-box {
+            background: var(--bg-base);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            height: 250px;
+            overflow-y: auto;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .terms-box h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .terms-box h4:first-child {
+            margin-top: 0;
+        }
+
+        .terms-box p {
+            margin-bottom: 1rem;
+        }
+
+        /* Form Actions & Signature */
+        .signature-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .signature-input-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .signature-input-group input {
+            width: 100%;
+            background: var(--bg-base);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .signature-input-group input:focus {
+            border-color: var(--border-highlight);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:disabled {
+            background-color: var(--text-dimmed);
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+
+        /* Success State Banner */
+        .success-banner {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
